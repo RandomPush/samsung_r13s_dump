@@ -1,0 +1,2 @@
+/system/preload/Instagram_stub_preload/Instagram_stub_preload.apk
+/system/preload/Facebook_stub_preload/Facebook_stub_preload.apk

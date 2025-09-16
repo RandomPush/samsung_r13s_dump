@@ -1,0 +1,16 @@
+on property:ro.boot.carrierid=ATT
+    setprop ssu.support 1
+on property:ro.boot.carrierid=AIO
+    setprop ssu.support 1
+on property:ro.boot.carrierid=CCT
+    setprop ssu.support 1
+on property:ro.boot.carrierid=CHA
+    setprop ssu.support 1
+on property:ro.boot.carrierid=USC
+    setprop ssu.support 1
+on property:ro.boot.carrierid=DSH
+    setprop ssu.support 1
+on property:ro.boot.carrierid=VZW
+    setprop ssu.support 1
+on property:ro.boot.carrierid=XAU
+    setprop ssu.support 1

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<omc-default-permissions>
+    <sales-code csc="ATT" firstboot="true">
+          <!--  ATT ,POST_NOTIFICATIONS: 271314815@Google -->
+        <package name="com.aura.jet.att">
+			<permission name="android.permission.POST_NOTIFICATIONS" systemfixed="false" />
+        </package>
+    </sales-code>
+</omc-default-permissions>

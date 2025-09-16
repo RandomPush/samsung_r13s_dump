@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+
+	<!--  NC , 189919411@Google Bug ID -->	  
+  <exception package="com.dish.wireless.activation">
+		<permission name="android.permission.READ_SMS" systemfixed="false"/>
+		<permission name="android.permission.RECEIVE_SMS" systemfixed="false"/>
+		<permission name="android.permission.SEND_SMS" systemfixed="false"/>
+		<permission name="android.permission.READ_CALL_LOG" systemfixed="false" />
+		<permission name="android.permission.WRITE_CALL_LOG" systemfixed="false" />
+		<permission name="android.permission.READ_PHONE_STATE" systemfixed="false" />
+		<permission name="android.permission.ACCESS_FINE_LOCATION" systemfixed="false" />
+		<permission name="android.permission.ACCESS_COARSE_LOCATION" systemfixed="false" />
+		<permission name="android.permission.ACCESS_BACKGROUND_LOCATION" systemfixed="false" />
+		<permission name="android.permission.POST_NOTIFICATIONS" systemfixed="false" />
+                <permission name="android.permission.ANSWER_PHONE_CALLS" systemfixed="false" />
+                <permission name="android.permission.CALL_PHONE" systemfixed="false" />
+                <permission name="android.permission.READ_PHONE_NUMBERS" systemfixed="false" />
+                <permission name="android.permission.RECEIVE_MMS" systemfixed="false" />
+                <permission name="android.permission.RECEIVE_WAP_PUSH" systemfixed="false" />
+  </exception>
+ 
+</exceptions>
