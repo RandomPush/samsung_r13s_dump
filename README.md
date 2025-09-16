@@ -1,0 +1,14 @@
+# r13ssqw-user 16 BP2A.250605.031.A3 S731USQU1AYH9 release-keys
+- manufacturer: samsung
+- platform: erd9945
+- codename: r13s
+- flavor: r13ssqw-user
+- release: 16
+- id: BP2A.250605.031.A3
+- incremental: S731USQU1AYH9
+- tags: release-keys
+- fingerprint: samsung/r13ssqw/r13s:14/UP1A.231005.007/S731USQU1AYH9:user/release-keys
+- is_ab: true
+- brand: samsung
+- branch: r13ssqw-user-16-BP2A.250605.031.A3-S731USQU1AYH9-release-keys-
+- repo: samsung_r13s_dump
