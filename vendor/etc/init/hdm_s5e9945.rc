@@ -1,0 +1,11 @@
+# [ HDM SW Block
+on property:vendor.hdm.internal.cpm=boot
+    stop ril-daemon
+    stop cpboot-daemon
+    stop gpsd
+
+on property:vendor.hdm.internal.cpm=stop
+    stop ril-daemon
+    stop cpboot-daemon
+    stop gpsd
+# ] HDM SW Block
