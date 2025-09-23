@@ -1,0 +1,15 @@
+libAIHRWrapper.camera.samsung.so
+libBayerSR10.camera.samsung.so
+libBayerSR10Tuning.camera.samsung.so
+libLocalTM_wrapper.camera.samsung.so
+libOpenCL.so
+libPersonal_capture.camera.samsung.so
+libPetDetector_v1.camera.samsung.so
+libdigital_tele_scope.arcsoft.so
+libdigital_tele_scope_rawsr.arcsoft.so
+libdtsr_wrapper_v1.camera.samsung.so
+libenn_public_api_cpp.so
+libenn_public_api_cpp_lib.so
+libenn_user.samsung_slsi.so
+libenn_user_lib.so
+libtetra_super_shot.arcsoft.so

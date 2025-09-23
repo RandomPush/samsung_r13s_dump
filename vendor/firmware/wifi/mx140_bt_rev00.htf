@@ -1,0 +1,155 @@
+header.build_id=O|11139|2025-07-15 18:40:44 UTC|redwood_s640a|S640_S5N6175_release-13_Y25W29A
+header.platform=redwood_s640a_s25fe_us_dualfem_rev00
+
+version=0
+file=bt
+
+# BT 6.1 HCI/LMP version
+PSKEY_HCI_LMP_LOCAL_VERSION = 0x0F0F
+
+# BT 6.1 HCI/LMP version
+PSKEY_LMP_REMOTE_VERSION = 0x0F
+
+# BLE features
+PSKEY_DEFAULT_BLE_FEATURES = { 0xF9FF, 0xFF00, 0x21B6, 0x0000, 0x0000 }
+
+# Local commands
+PSKEY_LOCAL_SUPPORTED_COMMANDS = {0xff, 0xff, 0xff, 0x03, 0xcc, 0xff, 0xef, 0xff, 0xff, 0xff, 0x04, 0xff, 0xf2, 0x0f, 0xe8, 0xfe, 0x3f, 0xf7, 0x83, 0xff, 0x1c, 0x00, 0x04, 0x00, 0x61, 0xf7, 0xff, 0xff, 0x7f, 0x38, 0x00, 0x00, 0xfe, 0xfc, 0xff, 0xff, 0xff, 0xff, 0xff, 0x1f, 0xe0, 0xef, 0xff, 0xff, 0x9f, 0xbd, 0x07, 0x00, 0x00}
+
+# Enable FEM usage
+PSKEY_USE_EXTERNAL_FEM = True
+
+# Tx low and Rx bypass
+PSKEY_ENABLE_FEM_CTRL_PINS_BTP = {0x00010000, 0x00100000}
+
+# Tx high and Rx high
+# hp_elna is overloaded with lp_elna due to DIGI-37226.
+PSKEY_ENABLE_FEM_CTRL_PINS_2ND = {0x0003000C, 0x003000C0}
+
+# Tx and Rx low - ePA_TX Mid DPD WiFi mode
+# - This is not ideal, but QM42500A does not have TXL mode
+PSKEY_ENABLE_FEM_CTRL_PINS_3RD = {0x000A000C, 0x00A000C0}
+
+# Enable RX MRC on connections
+PSKEY_RX_MRC_ENABLE = 1
+
+# Maximum BR/EDR transmit power
+PSKEY_LC_MAX_TX_POWER = 18
+
+# Maximum transmit power
+PSKEY_BLE_MAX_TX_POWER = 18
+
+# Maximum transmit power of LE CODED
+PSKEY_BLE_CODED_MAX_TX_POWER = 12
+
+# Extra transmit power for LE2M
+PSKEY_BLE_2M_TX_POWER_INCREASE = 0
+
+# Switch iLNA to low power above this RSSI
+PSKEY_LNA_LOW_POWER_THRESHOLD = -55
+
+# Lower limit of the Bluetooth receiver golden range
+PSKEY_LC_GOLDEN_RANGE_MIN = -50
+
+# RSSI adjustment based on power loss (iLNA + switch)
+PSKEY_RSSI_CORRECTION = {1, 1}
+
+# RSSI adjustment based on power loss (eLNA + switch)
+PSKEY_RSSI_CORRECTION_2ND = {1, 1}
+
+# Enable High power mode (ePA) entries
+PSKEY_ENABLE_HIGH_POWER_MODE = 2
+
+# KPI Target
+PSKEY_BLE_DEFAULT_TX_POWER = 7
+
+# Enable Tx diversity
+PSKEY_TX_DIVERSITY_ENABLED = 1
+
+# Increase LE scan SimRx on Redwood
+PSKEY_INCREASE_SCAN_WINDOW_IN_SIMRX_PHASE = 30
+
+# Enable Dual TX
+PSKEY_DUAL_TX_ENABLE = 1
+
+# Frequency response of transceivers applied in the four antenna paths in channel sounding
+PSKEY_CS_HW_FREQUENCY_RESPONSE_WL0 = { 0x00001FFF, 0x00001FFF, 0xFA40290D, 0x0338279C, 0x0C582461, 0x13811FF7, 0x199319DC, \
+                                       0x1E4D135C, 0x21A40BAE, 0x24480445, 0x24F6FC69, 0x23EAF4AF, 0x21EBED11, 0x1E6FE63C, \
+                                       0x1A03DF6F, 0x14CFDAAC, 0x0E5AD627, 0x0793D40B, 0x0047D2B7, 0xF90DD1E0, 0xF21DD30C, \
+                                       0xEB18D4E9, 0xE541D7F0, 0x00001FFF, 0x00001FFF, 0x00001FFF, 0xD2CDEC87, 0xD0F2F2D6, \
+                                       0xCFD1F8CB, 0xD050FF5C, 0xD1870581, 0xD3E50C0A, 0xD70E1177, 0xDB6016E0, 0xDFD01B8E, \
+                                       0xE53F1FF8, 0xEA9422E7, 0xF0752584, 0xF65B2673, 0xFC962771, 0x02402693, 0x07FE2506, \
+                                       0x0D24225C, 0x12701EF2, 0x16831AA7, 0x1A3B15A6, 0x1CE1104A, 0x1EFF0A8D, 0x1FF2045A, \
+                                       0x2069FE22, 0x1F35F7A8, 0x1DB2F1AA, 0x1AC3EC2C, 0x16ADE715, 0x11A7E288, 0x0BE1DED6, \
+                                       0x0559DBA8, 0xFEDCDA16, 0xF754D97B, 0xF04CDA63, 0xE8C3DCC0, 0xE1FFE053, 0xDBFBE54F, \
+                                       0xD733EBCA, 0xD291F32D, 0xD061FBE1, 0xCF270469, 0xD0350DC0, 0xD34A1681, 0xD8DE1E79, \
+                                       0xDFC925CB, 0xE9362B5B, 0xF3E22EF5, 0xFFC52F40, 0x0B8D2CE8, 0x17BB26DD, 0x22AF1D79, \
+                                       0x00001FFF, 0x00001FFF }
+PSKEY_CS_HW_FREQUENCY_RESPONSE_WL1 = { 0x00001FFF, 0x00001FFF, 0xD6F20383, 0xDA730BA8, 0xDF161276, 0xE4FF1817, 0xEB351C15, \
+                                       0xF1F01EDF, 0xF9012097, 0xFFB020C8, 0x067D1FB8, 0x0D0C1D88, 0x12C21AAD, 0x180016B0, \
+                                       0x1C11123D, 0x1F8E0CC4, 0x21CE070A, 0x2311008D, 0x2300FA54, 0x221EF424, 0x2039EDF4, \
+                                       0x1D84E803, 0x19D8E2FF, 0x00001FFF, 0x00001FFF, 0x00001FFF, 0x05A2D602, 0x0002D4BB, \
+                                       0xFA7AD544, 0xF4F3D673, 0xEFCCD901, 0xEA4FDC43, 0xE5B1E06D, 0xE123E52C, 0xDDD3EA4F, \
+                                       0xDABFEFAD, 0xD90AF596, 0xD7CAFB2C, 0xD7C4013A, 0xD82B06E9, 0xDA0B0C5D, 0xDC9311B2, \
+                                       0xE0511693, 0xE43A1AB4, 0xE8721DE5, 0xEDF320E5, 0xF3A72239, 0xF9C3236A, 0x000C2343, \
+                                       0x05FC2280, 0x0BD320F6, 0x11671E7D, 0x16971ACC, 0x1AE81696, 0x1EA71186, 0x21670C06, \
+                                       0x22E205F2, 0x233FFF84, 0x22DFF913, 0x20E3F21D, 0x1E39EC7C, 0x19EAE696, 0x1463E221, \
+                                       0x0DF0DDC3, 0x06C7DB0D, 0xFF03D98C, 0xF705D9E6, 0xEF25DB8B, 0xE6F2DF4B, 0xE029E4B5, \
+                                       0xDA4DEC05, 0xD653F49E, 0xD438FEA6, 0xD49909D9, 0xD82D146D, 0xDE7D1F40, 0xE7E4278F, \
+                                       0x00001FFF, 0x00001FFF }
+PSKEY_CS_HW_FREQUENCY_RESPONSE_WL2 = { 0x00001FFF, 0x00001FFF, 0xD4F9FE40, 0xD7E20702, 0xDBA00EA3, 0xE0EB14E2, 0xE6C31A0C, \
+                                       0xEE181DDA, 0xF4F32060, 0xFC6621C1, 0x02B42168, 0x0A0D1FAC, 0x106E1CF9, 0x16241928, \
+                                       0x1AD314D1, 0x1ED01018, 0x21800A13, 0x234B03E2, 0x23D0FD2E, 0x23CDF745, 0x2214F133, \
+                                       0x1FEDEB1D, 0x1C88E5DA, 0x00001FFF, 0x00001FFF, 0x00001FFF, 0x0904D78B, 0x038ED604, \
+                                       0xFDE4D641, 0xF81DD6FC, 0xF2A4D96B, 0xED75DBEA, 0xE8BAE031, 0xE44CE475, 0xE04CE990, \
+                                       0xDD82EE8A, 0xDB7EF442, 0xDA46F9BE, 0xDA2FFFF9, 0xDA33057F, 0xDBD20AE9, 0xDE8F0F84, \
+                                       0xE2561412, 0xE62E1887, 0xEB2E1C04, 0xF0301E82, 0xF6252030, 0xFB9820DA, 0x01FB212F, \
+                                       0x07982020, 0x0DAE1E87, 0x12841B99, 0x17AF1821, 0x1B061364, 0x1EA60E49, 0x21170865, \
+                                       0x22A70257, 0x2278FC32, 0x214AF645, 0x1F1FEF9D, 0x1B94E9B8, 0x17A1E435, 0x11F4E06F, \
+                                       0x0B01DD60, 0x03E2DB2C, 0xFBD9DAA4, 0xF47ADB71, 0xEC7CDE84, 0xE59BE31B, 0xDF60E9C8, \
+                                       0xDA89F144, 0xD71FFA7B, 0xD693040D, 0xD8150F8C, 0xDCF918D5, 0xE46A22E2, 0xEF0A2A48, \
+                                       0x00001FFF, 0x00001FFF }
+PSKEY_CS_HW_FREQUENCY_RESPONSE_WL3 = { 0x00001FFF, 0x00001FFF, 0xC4C2DD33, 0xC27DE98D, 0xC2E3F5FF, 0xC5710130, 0xC9790B48, \
+                                       0xCF4A13EA, 0xD63D1B6E, 0xDE28212B, 0xE61625B0, 0xEE7827DE, 0xF6FE2942, 0xFF552960, \
+                                       0x073B284B, 0x0E8E2602, 0x153F2285, 0x1B441D87, 0x204617E0, 0x24E21195, 0x284A0ACF, \
+                                       0x2A5B0349, 0x2BBBFBC8, 0x00001FFF, 0x00001FFF, 0x00001FFF, 0x2536DF0D, 0x2102D97A, \
+                                       0x1BF4D522, 0x15A3D1A4, 0x0EB6CEDE, 0x0762CC93, 0x0075CBBA, 0xF944CBCF, 0xF1F3CD1C, \
+                                       0xEAB9CEF1, 0xE45ED1CE, 0xDE9FD5A8, 0xD9C0DA6C, 0xD53BDFDE, 0xD209E5FE, 0xCF53EC7B, \
+                                       0xCDE6F34A, 0xCD38FA35, 0xCDD90157, 0xCF3707C9, 0xD1EA0E60, 0xD4F8141C, 0xD98E19B0, \
+                                       0xDE671E44, 0xE467225C, 0xEA7A2532, 0xF1092746, 0xF79727BC, 0xFE5B2777, 0x051E25D2, \
+                                       0x0B69235E, 0x111A1FBB, 0x164E1B6B, 0x1A6C15A1, 0x1DCC0F86, 0x1FAF08A7, 0x208401D5, \
+                                       0x1FE3FA71, 0x1DF1F34D, 0x1A86EC5F, 0x15E5E621, 0x0F80E0F0, 0x0876DCDE, 0x0009DA60, \
+                                       0xF6FFD9BD, 0xED8CDB76, 0xE445DF2A, 0xDBC3E57D, 0xD4BEEDD6, 0xCFD6F870, 0xCD230500, \
+                                       0x00001FFF, 0x00001FFF }
+
+PSKEY_CS_HW_RTT_DELAY_RESPONSE = { 30, 25, 20, 15, 10, 3, -3, -8, -12, -18, -20, -21, \
+                                  -32, -44, -52, -54, -56, -56, -56, -56, -56, -56, -56, -66, \
+                                  -70, -76, -81, -70, -56, -43, -35, -34, -31, -30, -28, -27, \
+                                  -26, -23, -23, -23, -23, -23, -22, -24, -26, -26, -27, -18, \
+                                  -18, -17, -15, -12, -9, -7, -4, 8, 8, 8, 8, 13, \
+                                  17, 23, 30, 31, 32, 33, 45, 53, 66, 84, 106, 117, \
+                                  131, 145, 160, 175, 185, 190, 195 }
+
+# Temperature compensation for UNIV - values found by DSK
+ PSKEY_TEMPERATURE_VS_DELTA_TX_BB = {-18,15, 20,0, 25,0, 60,-20}
+ PSKEY_TEMPERATURE_VS_DELTA_TX_BB_MR_HEADER = {-18,10, 20,0, 25,0, 60,-10}
+ PSKEY_TEMPERATURE_VS_DELTA_TX_BB_MR_PAYLOAD = {-18,15, 20,0, 25,0, 60,-10}
+ PSKEY_TEMPERATURE_VS_DELTA_TX_BB_BLE = {-18,15, 20,0, 25,0, 60,-20}
+
+# On request from customer the radiotest Bluetooth address is changed
+ PSKEY_RADIOTEST_BD_ADDRESS = {0x00,0x00,0x88,0xc0,0xff,0xee}
+ # Reduced TX power in dBm for GFSK and DPSK
+ PSKEY_REDUCED_MAX_TX_POWER_LIMIT = {14, 11}
+ # Enables transforming the advertising TX power with {step_size, base}
+ PSKEY_ULP_TRANSFORM_ADV_TX_POWER = {5, 0}
+ # Do not allow alignment of LE scan and page scan
+ PSKEY_ALIGN_LE_SCAN_PAGE_SCAN = false
+
+# Power table
+PSKEY_POWER_TABLE = {0x044d83eb, 0x000143c1, 0x024613ec, 0x0001a3c8, 0x00000074, 0x00c9c2ec, 0x000143c4, 0x02be92ed, 0x000fa3c8, 0x00000074, 0x00d002ed, 0x000143c4, 0x02c612ee, 0x0001a3c8, 0x00000074, 0x01b202ee, 0x000143c4, 0x02cd93ef, 0x0001a3c8, 0x00000074, 0x01b702ef, 0x000143c4, 0x01b712f0, 0x0001a3c9, 0x00000074, 0x01be83f0, 0x000143c4, 0x01be92f1, 0x0001a3c9, 0x00000074, 0x01c602f1, 0x000143c4, 0x01c612f2, 0x0001a3c9, 0x00000074, 0x01cd82f2, 0x000143c4, 0x01cd92f3, 0x0001a3c9, 0x00000074, 0x024883f3, 0x000143c8, 0x024612f4, 0x0001a3c9, 0x00000074, 0x02c4c2f4, 0x000143c8, 0x024d93f5, 0x0001a3c9, 0x00000074, 0x02cec2f5, 0x000143c8, 0x043492f6, 0x0001a3c9, 0x00000074, 0x053482f6, 0x000143c8, 0x043992f7, 0x0001a3c9, 0x00000074, 0x053d42f7, 0x000143c8, 0x044112f8, 0x0001a3c9, 0x00000074, 0x054883f8, 0x000143c8, 0x044893f9, 0x0001a3c9, 0x00000074, 0x024102f9, 0x000143c9, 0x063c12fa, 0x0001a3c9, 0x00000074, 0x024882fa, 0x000143c9, 0x064252fb, 0x0001a3c9, 0x00000074, 0x02c603fb, 0x000143c9, 0x064d93fc, 0x0001a3c9, 0x00000074, 0x04b202fc, 0x000143c9, 0x043ad2fd, 0x0001a3ca, 0x00000074, 0x04b982fd, 0x000143c9, 0x044252fe, 0x0001a3ca, 0x00000074, 0x04c242fe, 0x000143c9, 0x044d93ff, 0x0001a3ca, 0x00000074, 0x04cd83ff, 0x000143c9, 0x063c1280, 0x0001a3ca, 0x00000074, 0x042a8280, 0x000143ca, 0x06439281, 0x0001a3ca, 0x00000074, 0x04320281, 0x000143ca, 0x064d9382, 0x0001a3ca, 0x00000074, 0x04398282, 0x000143ca, 0x04411283, 0x0001a3cb, 0x00000074, 0x04438383, 0x000143ca, 0x04489284, 0x0001a3cb, 0x00000074, 0x04280284, 0x000143cb, 0x044d9285, 0x0001a3cb, 0x00000074, 0x042f8285, 0x000143cb, 0x43439286, 0x0001a3cb, 0x00000074, 0x04398286, 0x000143cb, 0x434d9387, 0x0001a3cb, 0x00000074, 0x04d78387, 0x000101cb, 0x44489288, 0x0003a30b, 0x00000074, 0x24a80288, 0x000143cb, 0x444d9289, 0x0003a30b, 0x00000074, 0x252f8289, 0x000143cb, 0x453fd28a, 0x0003e00f, 0x00000074, 0x254d838a, 0x000143cb, 0x454b138b, 0x0003e00f, 0x00000074, 0x6434828b, 0x000143ef, 0xa5303a8c, 0x0001290f, 0x00000074, 0x644b028c, 0x000143ef, 0x552d128c, 0x0003e00f, 0x00000074, 0x45c9ca8d, 0x00013b0f, 0xa533fa8d, 0x0001390f, 0x00000074, 0x53b7128d, 0x0001a3cb, 0x5532128d, 0x0003e00f, 0x00000074, 0x43c4ca8e, 0x00013b0b, 0xa53ada8e, 0x0001390f, 0x00000074, 0x53c7528e, 0x0001a3cb, 0x5538528e, 0x0003e00f, 0x00000074, 0x45320b8f, 0x00013b0f, 0x64b21b8f, 0x0001390f, 0x00000074, 0x73b8538f, 0x0001a3cb, 0x553fd28f, 0x0003e00f, 0x00000074, 0x66b84a90, 0x00013b0f, 0xa7425a90, 0x0001390f, 0x00000074, 0x77be9290, 0x000101cb, 0x554b1390, 0x0003e00f, 0x00000074, 0x67be8a91, 0x00013b0f, 0x83461a91, 0x0001310f, 0x00000074, 0x5444d291, 0x0001a38f, 0x834d9b92, 0x0001310f, 0x00000074, 0x84398b92, 0x00013b0f, 0x82cd9a13, 0x0001310f, 0x00000074, 0x7435d392, 0x0001a28f, 0x82cd9a14, 0x0001310f, 0x00000074}
+
+# Number of power table entries
+PSKEY_POWER_TABLE_ENTRIES = 46
+
+# Configure the values for the SAR DSI table
+PSKEY_SAR_DSI_TABLE = {18, 15, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18}

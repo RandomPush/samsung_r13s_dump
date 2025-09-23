@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+  <moredump4 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.samsung.com ../Moredump4.xsd">
+
+    <target name="redwood" aka="mxl660" idat="d0000000" chipid="C1" firmware="90000000"
+     comment="http://cognidox/cgi-perl/part-details?partnum=SC-510327-DD">
+
+      <mmap startAddr="90000000" size="8192" dev="/dev/mx_0_mmap"/>
+      <mmap startAddr="60000000" size="33" dev="/dev/mx_0_ramrp"/>
+
+      <cpu name="CortexM0+" xml="cortexM0Plus.xml">
+        <!-- This definition just defines the existence of the M0+ so a moredump file can be loaded into the simulator -->
+      </cpu>
+
+      <cpu name="WLAN/CortexR7" xml="cortexR7.xml">
+
+        <!-- Cortex-RP -->
+        <instance index="0" t32API="20000" t32GDB="30000" dev="/dev/mx_0_wlan_gdb">
+          <memory name="RAML2P" startAddr="68000000" size="96"  />
+          <memory name="DTCM0P" startAddr="08000000" size="64" />
+          <memory name="ITCM0P" startAddr="00000000" size="64" />
+        </instance>
+
+        <!-- Cortex-RS -->
+        <instance index="1" t32API="20001" t32GDB="30001" dev="/dev/mx_0_wlan_2_gdb">
+          <memory name="RAML2S" startAddr="68000000" size="96" />
+          <memory name="DTCM0S" startAddr="08000000" size="64" />
+          <memory name="ITCM0S" startAddr="00000000" size="64" />
+        </instance>
+
+        <subsystem name="PERD" xml="pp/perd/moredump/perd_registers.xml" />
+        <subsystem name="PERI" xml="pp/peri/moredump/peri_registers.xml" />
+        <subsystem name="PERT" xml="pp/pert/moredump/pert_registers.xml" />
+        <subsystem name="PERWD" xml="pp/perw_diet/moredump/perw_registers.xml" />
+        <subsystem name="PERWP" xml="pp/perw_pri/moredump/perw_registers.xml" />
+        <subsystem name="PERWS" xml="pp/perw_sec/moredump/perw_registers.xml" />
+
+        <memory name="RAMSS" startAddr="80000000" size="256" />
+        <memory name="RAMSP" startAddr="78000000" size="640" />
+        <memory name="RAMSD" startAddr="70000000" size="2560" />
+
+        <memory name="RAML3C" startAddr="48000000" size="256" />
+
+        <!-- FlexiMAC Cortex-M7 DTCMs -->
+        <memory name="DTCMS1" startAddr="44000000" size="32" />
+        <memory name="DTCMS0" startAddr="3C000000" size="32" />
+        <memory name="DTCMP1" startAddr="34000000" size="32" />
+        <memory name="DTCMP0" startAddr="2C000000" size="32" />
+        <memory name="DTCMD" startAddr="24000000" size="32" />
+
+        <!-- FlexiMAC Cortex-M7 ITCMs -->
+        <memory name="ITCMS1" startAddr="40000000" size="64" />
+        <memory name="ITCMS0" startAddr="38000000" size="160" />
+        <memory name="ITCMP1" startAddr="30000000" size="64" />
+        <memory name="ITCMP0" startAddr="28000000" size="160" />
+        <memory name="ITCMD" startAddr="20000000" size="160" />
+
+        <extraXml name="Snoop Control Unit" xml="pp/periph_scu/moredump/periph_scu_registers.xml"/>
+        <extraXml name="GIC CPU Interface" xml="pp/periph_int_ifc/moredump/periph_int_ifc_registers.xml"/>
+        <extraXml name="GIC Distributor Interface" xml="pp/periph_gic/moredump/periph_gic_registers.xml"/>
+
+      </cpu>
+
+      <cpu name="WLAN/CortexA55" xml="cortexA55.xml">
+        <instance index="0" t32API="0" t32GDB="0" dev="/dev/mx_0_wlan_gdb?">
+          <subsystem name="GIC CPU Interface 0" xml="a55pp/periph_int_ifc/moredump/periph_int_ifc_registers.xml"/>
+          <subsystem name="GIC Distributor Interface 0" xml="a55pp/periph_int_ifc2/moredump/periph_int_ifc2_registers.xml" />
+        </instance>
+        <instance index="1" t32API="1" t32GDB="1" dev="/dev/mx_0_wlan_gdb?">
+          <subsystem name="GIC CPU Interface 1" xml="a55pp/periph_int_ifc/moredump/periph_int_ifc_registers.xml"/>
+          <subsystem name="GIC Distributor Interface 1" xml="a55pp/periph_int_ifc2/moredump/periph_int_ifc2_registers.xml" />
+        </instance>
+        <instance index="2" t32API="2" t32GDB="2" dev="/dev/mx_0_wlan_gdb?">
+          <subsystem name="GIC CPU Interface 2" xml="a55pp/periph_int_ifc/moredump/periph_int_ifc_registers.xml"/>
+          <subsystem name="GIC Distributor Interface 2" xml="a55pp/periph_int_ifc2/moredump/periph_int_ifc2_registers.xml" />
+        </instance>
+        <instance index="3" t32API="3" t32GDB="3" dev="/dev/mx_0_wlan_gdb?">
+          <subsystem name="GIC CPU Interface 3" xml="a55pp/periph_int_ifc/moredump/periph_int_ifc_registers.xml"/>
+          <subsystem name="GIC Distributor Interface 3" xml="a55pp/periph_int_ifc2/moredump/periph_int_ifc2_registers.xml" />
+        </instance>
+
+        <map name="PERD"   target="f4000000" />
+        <map name="PERI"   target="d0000000" />
+        <map name="PERT"   target="98000000" />
+        <map name="RAMSS"  target="80000000" />
+        <map name="RAMSP"  target="78000000" />
+        <map name="RAMSD"  target="70000000" />
+        <map name="RAML3C" target="48000000" />
+
+        <!-- FlexiMAC Cortex-M7 DTCMs -->
+        <map name="DTCMS1" target="44000000" />
+        <map name="DTCMS0" target="3C000000" />
+        <map name="DTCMP1" target="34000000" />
+        <map name="DTCMP0" target="2C000000" />
+        <map name="DTCMD"  target="24000000" />
+
+        <!-- FlexiMAC Cortex-M7 ITCMs -->
+        <map name="ITCMS1" target="40000000" />
+        <map name="ITCMS0" target="38000000" />
+        <map name="ITCMP1" target="30000000" />
+        <map name="ITCMP0" target="28000000" />
+        <map name="ITCMD"  target="20000000" />
+
+        <!-- MCPU Primary Cortex-R7P DTCM/ITCM -->
+        <map name="DTCM0P" target="04000000" />
+        <map name="ITCM0P" target="00000000" />
+
+        <!-- MCPU Secondary Cortex-R7S DTCM/ITCM -->
+        <map name="DTCM0S" target="14000000" />
+        <map name="ITCM0S" target="10000000" />
+
+        <extraXml name="GIC Distributor Interface" xml="a55pp/periph_gic/moredump/periph_gic_registers.xml"/>
+
+      </cpu>
+
+      <cpu name="WLAN/CortexM7" xml="cortexM7.xml">
+        <instance index="0" t32API="0" t32GDB="0" dev="/dev/??">
+          <map name="RAMSD"  target="70000000" />
+          <map name="RAMSS"  target="56000000" />
+          <map name="RAMSP"  target="54000000" />
+          <map name="PERWD"  target="40000000" />
+          <map name="DTCMD"  target="20000000" />
+          <map name="ITCMD"  target="00000000" />
+        </instance>
+        <instance index="1" t32API="1" t32GDB="1" dev="/dev/??">
+          <map name="RAMSP"  target="70000000" />
+          <map name="RAMSS"  target="56000000" />
+          <map name="RAMSD"  target="52000000" />
+          <map name="PERWP"  target="40000000" />
+          <map name="DTCMP0" target="20000000" />
+          <map name="ITCMP0" target="00000000" />
+        </instance>
+        <instance index="2" t32API="2" t32GDB="2" dev="/dev/??">
+          <map name="RAMSP"  target="70000000" />
+          <map name="RAMSS"  target="56000000" />
+          <map name="RAMSD"  target="52000000" />
+          <map name="PERWP"  target="40000000" />
+          <map name="DTCMP1" target="20000000" />
+          <map name="ITCMP1" target="00000000" />
+        </instance>
+        <instance index="3" t32API="3" t32GDB="3" dev="/dev/??">
+          <map name="RAMSS"  target="70000000" />
+          <map name="RAMSP"  target="54000000" />
+          <map name="RAMSD"  target="52000000" />
+          <map name="PERWS"  target="40000000" />
+          <map name="DTCMS0" target="20000000" />
+          <map name="ITCMS0" target="00000000" />
+        </instance>
+        <instance index="4" t32API="4" t32GDB="4" dev="/dev/??">
+          <map name="RAMSS"  target="70000000" />
+          <map name="RAMSP"  target="54000000" />
+          <map name="RAMSD"  target="52000000" />
+          <map name="PERWS"  target="40000000" />
+          <map name="DTCMS1" target="20000000" />
+          <map name="ITCMS1" target="00000000" />
+        </instance>
+
+        <map name="RAML2S" target="51000000" />
+        <map name="RAML2P" target="50000000" />
+
+        <map name="PERD"   target="4e000000" />
+        <map name="PERI"   target="49000000" />
+        <map name="PERT"   target="48000000" />
+
+        <extraXml name="Nested Vectored Interrupt Controller (M7)" xml="cortexM7_nvic.xml"/>
+        <extraXml name="System Control Space (M7)" xml="cortexM7_scs.xml"/>
+        <extraXml name="Debug (M7)" xml="cortexM7_dbg.xml"/>
+        <extraXml name="Data Watchpoint and Trace Unit (M7)" xml="cortexM7_dwt.xml"/>
+        <extraXml name="Flash Patch and Breakpoint Unit (M7)" xml="cortexM7_fpb.xml"/>
+        <extraXml name="Instrumentation Trace Macrocell (M7)" xml="cortexM7_itm.xml"/>
+        <extraXml name="Memory Protection Unit (M7)" xml="cortexM7_mpu.xml"/>
+      </cpu>
+
+      <cpu name="BT/CortexM7" xml="cortexM7.xml">
+        <!--  The default chip ID address, defined in the target element, is not visible to the M7,
+              so overriding 'idat' for the M7 to read the chip ID at the address of SYS_VERSION.-->
+        <instance index="0" t32API="20003" t32GDB="30002" dev="/dev/mx_0_wpan_gdb" idat="50000000">
+        </instance>
+
+        <map name="PERT" target="50000000"/>
+        <subsystem name="PERB" xml="wpanpp/perb/moredump/perb_registers.xml" comment=""/>
+
+        <memory startAddr="20000000" size="192" name="DTCM (WPAN)" />
+        <memory startAddr="00800000" size="1024" name="DRAM remapped" />
+        <memory startAddr="00000000" size="704" name="ITCM (WPAN)" />
+
+      </cpu>
+
+    <!-- Regions defined outside a cpu node are global (accessible by all cpus at the same address) -->
+
+    <subsystem name="PCIEDBI pci_aer_cap" xml="pp/pci_aer_cap/moredump/pci_aer_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_atu_cap" xml="pp/pci_atu_cap/moredump/pci_atu_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_hdma_cap" xml="pp/pci_hdma_cap/moredump/pci_hdma_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_l1sub_cap" xml="pp/pci_l1sub_cap/moredump/pci_l1sub_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_ltr_cap" xml="pp/pci_ltr_cap/moredump/pci_ltr_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_msi_cap" xml="pp/pci_msi_cap/moredump/pci_msi_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_msix_cap_dbi2" xml="pp/pci_msix_cap_dbi2/moredump/pci_msix_cap_dbi2_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_msix_cap" xml="pp/pci_msix_cap/moredump/pci_msix_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_pcie_cap" xml="pp/pci_pcie_cap/moredump/pci_pcie_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_pcie_cap_dbi2" xml="pp/pci_pcie_cap_dbi2/moredump/pci_pcie_cap_dbi2_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_pm_cap" xml="pp/pci_pm_cap/moredump/pci_pm_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_port_logic" xml="pp/pci_port_logic/moredump/pci_port_logic_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_ras_des_cap" xml="pp/pci_ras_des_cap/moredump/pci_ras_des_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_sn_cap" xml="pp/pci_sn_cap/moredump/pci_sn_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_spcie_cap" xml="pp/pci_spcie_cap/moredump/pci_spcie_cap_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_type0_hdr_dbi2" xml="pp/pci_type0_hdr_dbi2/moredump/pci_type0_hdr_dbi2_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_type0_hdr" xml="pp/pci_type0_hdr/moredump/pci_type0_hdr_registers.xml" comment=""/>
+    <subsystem name="PCIEDBI pci_vsecdma_cap" xml="pp/pci_vsecdma_cap/moredump/pci_vsecdma_cap_registers.xml" comment=""/>
+
+    <memory name="RAMRP" startAddr="60000000" size="33" />
+    <memory name="PCIE"  startAddr="90000000" size="8192" />
+
+  </target>
+
+  <!-- zippy=<start address of the "zippy_bb_0" block>, For spoof address, see TOOLS-7135 -->
+  <rfchips zippy="50600000" spoof_base_address="88000000">
+    <!--
+      Override, if required, the default offsets of zippy registers relative to the start address above.
+
+      Currently, the register offsets that can be overridden are listed below along
+      with the values that moredump will use by default if they are not overridden
+      (values are always expressed as non-prefixed hexadecimals):
+        addressControlRegOffset: defaults to 0 (ZIPPY_BB_ADDR_CTRL)
+        readDataRegOffset: 4                   (ZIPPY_BB_READ_DATA_MPORT_I0)
+        interruptEnableRegOffset: 34           (ZIPPY_BB_INT_EN_I0)
+        interruptStatusRegOffset: 38           (ZIPPY_BB_INT_STATUS)
+        interruptClearRegOffset: 3c            (ZIPPY_BB_INT_CLEAR_I0)
+        apbStatusRegOffset: 40                 (ZIPPY_BB_APB_STATUS_I0)
+    -->
+    <zippy
+      addressControlRegOffset="40000"
+      readDataRegOffset="4000c"
+      interruptEnableRegOffset="44"
+      interruptStatusRegOffset="48"
+      interruptClearRegOffset="4c"
+      apbStatusRegOffset="50"
+      writeDataRegOffset="40004"
+      writeDataMaskRegOffset="40008"
+    />
+    <rfchip name="bow" idat="0000" chipid="B7" interface="zippy">
+      <extended_addressing rf_address="00001024:01" bb_address="5060002c:100000" />
+      <version majorminor="00" xml="btwl/btwl/moredump/btwl_registers.xml" comment="S640 EVT0"/>
+    </rfchip>
+
+  </rfchips>
+
+</moredump4>
+
