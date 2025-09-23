@@ -1,0 +1,23 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.system_dlkm.brand=samsung
+ro.product.system_dlkm.device=r13s
+ro.product.system_dlkm.manufacturer=samsung
+ro.product.system_dlkm.model=SM-S731B
+ro.product.system_dlkm.name=r13sxxx
+ro.product.name_for_attestation=
+ro.product.model_for_attestation=
+ro.product.brand_for_attestation=
+ro.system_dlkm.build.date=Thu Aug 14 17:56:48 KST 2025
+ro.system_dlkm.build.date.utc=1755161808
+ro.system_dlkm.build.fingerprint=samsung/r13sxxx/r13s:14/UP1A.231005.007/S731BXXU1AYH9:user/test-keys
+ro.system_dlkm.build.id=UP1A.231005.007
+ro.system_dlkm.build.tags=test-keys
+ro.system_dlkm.build.type=user
+ro.system_dlkm.build.version.incremental=S731BXXU1AYH9
+ro.system_dlkm.build.version.release=14
+ro.system_dlkm.build.version.release_or_codename=14
+ro.system_dlkm.build.version.sdk=34
+# end of file
